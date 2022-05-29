@@ -45,6 +45,8 @@ int main() {
     cout << "2. Deposit\n";
     cout << "3. Quit\n";
 
+    break;
+
   case 3:
     cout << "Thank you for banking with Seabreeze";
   }

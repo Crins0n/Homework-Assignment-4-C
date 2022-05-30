@@ -4,7 +4,8 @@
 using std::cin;
 using std::cout;
 
-double checking_balance = 2500.00, savings_balance = 1000.00, savings_amount, checking_amount;
+double checking_balance = 2500.00, savings_balance = 1000.00, savings_amount,
+       checking_amount;
 
 int menu;
 
@@ -44,12 +45,23 @@ int main() {
           cout << "How much would you like to withdraw from your savings "
                   "account: ";
           cin >> savings_amount;
+          cout << "\n";
+          while (savings_balance < savings_amount) {
+            cout << "You do not have enough funds in your account to withdraw "
+                    "that much\n";
+            cout << "Please enter a smaller amount: ";
+            cin >> savings_amount;
+            cout << "\n";
+          }
           while (savings_amount <= 0) {
             cout << "Please enter an amount greater than 0: ";
             cin >> savings_amount;
           }
           savings_balance -= savings_amount;
           cout << "Your Savings Account Balance: " << savings_balance << "\n\n";
+          if (savings_balance == 0) {
+            cout << "You now have zero funds in your Savings Account.\n\n";
+          }
         }
 
         if (savings_menu == 2) {

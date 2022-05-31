@@ -86,13 +86,63 @@ int main() {
       break;
 
     case 2:
-      cout << "\t\tChecking Account\n\n";
-      cout << "Please enter a menu item (1-3) >\n";
-      cout << "*********************************\n";
-      cout << "1. Withdrawal\n";
-      cout << "2. Deposit\n";
-      cout << "3. Quit\n";
+      int checking_menu;
+      do {
+        cout << "\t\tChecking Account\n\n";
+        cout << "Please enter a menu item (1-3) >\n";
+        cout << "*********************************\n";
+        cout << "1. Withdrawal\n";
+        cout << "2. Deposit\n";
+        cout << "3. Quit\n";
+        cout << "\n\n";
+        cin >> checking_menu;
 
+        if (checking_menu == 1) {
+          cout << "How much would you like to withdraw from your checking "
+                  "account: ";
+          cin >> checking_amount;
+          cout << "\n";
+          while (checking_balance < checking_amount) {
+            cout << "You do not have enough funds in your account to withdraw "
+                    "that "
+                    "much.\n";
+            cout << "Please enter a smaller amount: ";
+            cin >> checking_amount;
+            cout << "\n";
+          }
+          while (checking_amount <= 0) {
+            cout << "Please enter an amount greater than 0: ";
+            cin >> checking_amount;
+          }
+          checking_balance -= checking_amount;
+          cout << "Your Checking Account Balance: " << checking_balance
+               << "\n\n";
+          if (checking_balance == 0) {
+            cout << "You now have zero funds in your Checking Account.\n\n";
+          }
+        }
+
+        if (checking_menu == 2) {
+          cout << "How much would you like to deposit into your Checking "
+                  "Account: ";
+          cin >> checking_amount;
+          cout << "\n";
+          while (checking_amount <= 0) {
+            cout << "Please enter an amount greater than 0: ";
+            cin >> checking_amount;
+          }
+          checking_balance += checking_amount;
+          cout << "Your Checking Account Balance : " << checking_balance
+               << "\n\n";
+        }
+
+        if (checking_menu < 1 || checking_menu > 3) {
+          cout << "You have entered an invalid option.\n";
+          cout << "Please enter a number 1-3 > ";
+          cin >> checking_menu;
+        }
+
+      } while (checking_menu != 3);
       break;
 
     case 3:

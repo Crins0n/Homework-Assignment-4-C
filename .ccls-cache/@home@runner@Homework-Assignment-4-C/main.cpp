@@ -37,9 +37,10 @@ int main() {
         cout << "*********************************\n";
         cout << "1. Withdrawal\n";
         cout << "2. Deposit\n";
-        cout << "3. Quit\n";
+        cout << "3. Main Menu\n";
         cout << "\n\n";
         cin >> savings_menu;
+        cout << "\n";
 
         if (savings_menu == 1) {
           cout << "How much would you like to withdraw from your savings "
@@ -93,9 +94,10 @@ int main() {
         cout << "*********************************\n";
         cout << "1. Withdrawal\n";
         cout << "2. Deposit\n";
-        cout << "3. Quit\n";
+        cout << "3. Main Menu\n";
         cout << "\n\n";
         cin >> checking_menu;
+        cout << "\n";
 
         if (checking_menu == 1) {
           cout << "How much would you like to withdraw from your checking "

@@ -105,26 +105,25 @@ int main() {
 
         // Withdrawal Selection for Checking Account
         if (checking_menu == 1) {
-          cout << "How much would you like to withdraw from your checking account: ";
+          cout << "How much would you like to withdraw from your checking "
+                  "account: ";
           cin >> checking_amount;
-          cout << "\n";
-          while (checking_balance < checking_amount) {
-            cout << "You do not have enough funds in your account to withdraw "
-                    "that "
-                    "much.\n";
-            cout << "Please enter a smaller amount: ";
-            cin >> checking_amount;
-            cout << "\n";
-          }
           while (checking_amount <= 0) {
             cout << "Please enter an amount greater than 0: ";
             cin >> checking_amount;
           }
+          cout << "\n";
+          while (checking_balance < checking_amount) {
+            cout << "You do not have enough funds in your account to withdraw "
+                    "that much\n";
+            cout << "Please enter a smaller amount or enter 0 to return to menu:  ";
+            cin >> checking_amount;
+            cout << "\n";
+          }
           checking_balance -= checking_amount;
-          cout << "Your Checking Account Balance: " << checking_balance
-               << "\n\n";
+          cout << "Your Checking Account Balance: " << checking_balance << "\n\n";
           if (checking_balance == 0) {
-            cout << "You now have zero funds in your Checking Account.\n\n";
+            cout << "You have zero funds available in your account.\n\n";
           }
         }
         // Deposit Selection for Checking Account

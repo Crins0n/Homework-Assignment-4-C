@@ -49,7 +49,7 @@ int main() {
           cout << "How much would you like to withdraw from your savings "
                   "account: ";
           cin >> savings_amount;
-          if (savings_amount < 0) {
+          while (savings_amount <= 0) {
             cout << "Please enter an amount greater than 0: ";
             cin >> savings_amount;
           }
@@ -57,13 +57,9 @@ int main() {
           while (savings_balance < savings_amount) {
             cout << "You do not have enough funds in your account to withdraw "
                     "that much\n";
-            cout << "Please enter a smaller amount: ";
+            cout << "Please enter a smaller amount or enter 0 to return to menu:  ";
             cin >> savings_amount;
             cout << "\n";
-          }
-          while (savings_amount < 0) {
-            cout << "Please enter an amount greater than 0: ";
-            cin >> savings_amount;
           }
           savings_balance -= savings_amount;
           cout << "Your Savings Account Balance: " << savings_balance << "\n\n";

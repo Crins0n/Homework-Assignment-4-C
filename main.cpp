@@ -57,7 +57,8 @@ int main() {
           while (savings_balance < savings_amount) {
             cout << "You do not have enough funds in your account to withdraw "
                     "that much\n";
-            cout << "Please enter a smaller amount or enter 0 to return to menu:  ";
+            cout << "Please enter a smaller amount or enter 0 to return to "
+                    "menu:  ";
             cin >> savings_amount;
             cout << "\n";
           }
@@ -114,14 +115,20 @@ int main() {
           }
           cout << "\n";
           while (checking_balance < checking_amount) {
-            cout << "You do not have enough funds in your account to withdraw "
-                    "that much\n";
-            cout << "Please enter a smaller amount or enter 0 to return to menu:  ";
-            cin >> checking_amount;
-            cout << "\n";
+            if (checking_balance == 0) {
+              cout << "Enter 0 to return to menu:  ";
+              cin >> checking_amount;
+              cout << "\n";
+            }
+            if (checking_balance < checking_amount) {
+              cout << "You do not have enough funds in your account to "
+                      "withdraw that much please enter a smaller amount: ";
+              cin >> checking_amount;
+            }
           }
           checking_balance -= checking_amount;
-          cout << "Your Checking Account Balance: " << checking_balance << "\n\n";
+          cout << "Your Checking Account Balance: " << checking_balance
+               << "\n\n";
           if (checking_balance == 0) {
             cout << "You have zero funds available in your account.\n\n";
           }

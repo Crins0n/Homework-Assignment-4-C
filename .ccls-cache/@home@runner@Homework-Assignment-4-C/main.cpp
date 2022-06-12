@@ -106,6 +106,9 @@ int main() {
 
         // Withdrawal Selection for Checking Account
         if (checking_menu == 1) {
+          cout << "Your balance is: ";
+          cout << checking_balance;
+          cout << "\n\n";
           cout << "How much would you like to withdraw from your checking "
                   "account: ";
           cin >> checking_amount;
@@ -116,7 +119,7 @@ int main() {
           cout << "\n";
           while (checking_balance < checking_amount) {
             if (checking_balance == 0) {
-              cout << "Enter 0 to return to menu:  ";
+              cout << "Error! Enter 0 to return to menu:  ";
               cin >> checking_amount;
               cout << "\n";
             }

@@ -1,3 +1,9 @@
+/* 
+SeaBreeze ATM
+Chris Hinson                   14JUN2022
+COP2000
+*/
+
 #include <iomanip>
 #include <iostream>
 
@@ -23,7 +29,7 @@ int main() {
     cout << "\n\n";
 
     // User validation for the Main Menu
-    if (menu < 1 || menu > 3) {
+    while (menu < 1 || menu > 3) {
       cout << "You have entered an invalid option.\n";
       cout << "Please enter a number 1-3 > ";
       cin >> menu;
@@ -84,10 +90,11 @@ int main() {
           cout << "Your Savings Account Balance: " << savings_balance << "\n\n";
         }
         // User validation for Savings Menu
-        if (savings_menu < 1 || savings_menu > 3) {
+        while (savings_menu < 1 || savings_menu > 3) {
           cout << "You have entered an invalid option.\n";
           cout << "Please enter a number 1-3 > ";
           cin >> savings_menu;
+          cout << "\n";
         }
 
       } while (savings_menu != 3);
@@ -150,10 +157,11 @@ int main() {
                << "\n\n";
         }
         // User Validation for Checking Menu
-        if (checking_menu < 1 || checking_menu > 3) {
+        while (checking_menu < 1 || checking_menu > 3) {
           cout << "You have entered an invalid option.\n";
           cout << "Please enter a number 1-3 > ";
           cin >> checking_menu;
+          cout << "\n";
         }
 
       } while (checking_menu != 3);
